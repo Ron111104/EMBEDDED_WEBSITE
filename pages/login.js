@@ -52,9 +52,11 @@ export default function Login() {
         </div>
 
         {/* Log In Button */}
-        <button className="w-full mt-6 bg-blue-600 py-3 rounded-md hover:bg-blue-700 transition text-lg font-medium">
-          Log In
-        </button>
+        <Link href="/landing">
+  <button className="w-full mt-6 bg-blue-600 py-3 rounded-md hover:bg-blue-700 transition text-lg font-medium">
+    Log In
+  </button>
+</Link>
 
         {/* Sign Up Redirect */}
         <p className="text-center mt-4 text-sm text-gray-400">

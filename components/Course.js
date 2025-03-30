@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef, useCallback } from "react"
-import { FiX, FiZoomIn, FiZoomOut } from "react-icons/fi"
+import { FiX, FiZoomIn, FiZoomOut, FiDownload } from "react-icons/fi"
 import { Document, Page } from "react-pdf"
 
 export default function Course({ pdfs = [] }) {
@@ -99,7 +99,7 @@ export default function Course({ pdfs = [] }) {
       <h2 className="text-xl font-semibold mb-4">Choose your course</h2>
 
       {/* Grid of PDF Thumbnails */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
         {pdfs.map((pdfFile, idx) => {
           const displayName = pdfFile.replace(".pdf", "").replace(/_/g, " ")
           return (
@@ -108,7 +108,7 @@ export default function Course({ pdfs = [] }) {
               onClick={() => handleCardClick(pdfFile)}
               className="w-full text-left block bg-[#1E1D2D] rounded-lg p-4 hover:bg-[#2a2940] transition focus:outline-none"
             >
-              <div className="w-full h-40 bg-[#252438] rounded mb-4 flex items-center justify-center overflow-hidden">
+              <div className="w-full h-auto bg-[#252438]  rounded mb-4 flex items-center justify-center overflow-hidden">
                 <Document
                   file={`/material/${pdfFile}`}
                   onLoadError={(error) =>
@@ -128,7 +128,7 @@ export default function Course({ pdfs = [] }) {
                   <Page
                     pageNumber={1}
                     className="pdf-thumbnail"
-                    width={200}
+                    width={260}
                     renderTextLayer={false}
                     renderAnnotationLayer={false}
                   />
@@ -161,6 +161,15 @@ export default function Course({ pdfs = [] }) {
               </div>
               {!loadError && (
                 <div className="flex items-center space-x-2 sm:space-x-4">
+                  {/* Download button */}
+                  <a
+                    href={selectedPdf}
+                    download
+                    className="text-white bg-gray-600 p-2 sm:p-3 rounded-full flex items-center justify-center hover:bg-gray-700"
+                    aria-label="Download PDF"
+                  >
+                    <FiDownload />
+                  </a>
                   <button
                     onClick={() =>
                       setZoomFactor((prev) => Math.min(prev + 0.1, 3))

@@ -100,23 +100,32 @@ export default function NavBar({ activeTab, setActiveTab }) {
 </button>
 
             </div>
+            {/* Syllabus Button in Side Menu */}
+<div className="px-4 py-3 hover:bg-[#2a2940] border-b border-gray-700">
+  <button
+    className="w-full text-left block text-sm font-medium"
+    onClick={() => handleTabChange("syllabus")}  // <-- Add this onClick
+  >
+    Syllabus
+  </button>
+</div>
+
             <div className="px-4 py-3 hover:bg-[#2a2940] border-b border-gray-700">
-              <button className="w-full text-left block text-sm font-medium">
-                Syllabus
-              </button>
-            </div>
-            <div className="px-4 py-3 hover:bg-[#2a2940] border-b border-gray-700">
-              <button className="w-full text-left block text-sm font-medium">
+              <button className="w-full text-left block text-sm font-medium"
+              onClick={() => handleTabChange("lessonplan")}>
                 Lesson Plan
               </button>
             </div>
             <div className="px-4 py-3 hover:bg-[#2a2940] border-b border-gray-700">
-              <button className="w-full text-left block text-sm font-medium">
+              <button className="w-full text-left block text-sm font-medium"
+              onClick={() => handleTabChange("digitalassignment")}>
                 Digital Assignment
               </button>
             </div>
             <div className="px-4 py-3 hover:bg-[#2a2940] border-b border-gray-700">
-              <button className="w-full text-left block text-sm font-medium">
+              <button 
+              className="w-full text-left block text-sm font-medium"
+              onClick={() => handleTabChange("resources")}  >
                 Resources
               </button>
             </div>

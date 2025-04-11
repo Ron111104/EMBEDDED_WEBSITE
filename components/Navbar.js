@@ -132,25 +132,27 @@ export default function NavBar({ activeTab, setActiveTab }) {
 
             {/* Software with a dropdown arrow */}
             <div className="border-b border-gray-700">
-              <button
-                className="w-full text-left flex items-center justify-between px-4 py-3 hover:bg-[#2a2940]"
-                onClick={toggleSoftware}
-                aria-expanded={softwareOpen}
-              >
-                <span className="text-sm font-medium">Software</span>
-                <FiChevronDown className={`transform transition-transform ${softwareOpen ? "rotate-180" : ""}`} />
-              </button>
-              {softwareOpen && (
-                <div className="bg-[#252438]">
-                  <button className="w-full text-left block py-3 px-8 hover:bg-[#33324a] text-sm">
-                    Software 1
-                  </button>
-                  <button className="w-full text-left block py-3 px-8 hover:bg-[#33324a] text-sm">
-                    Software 2
-                  </button>
-                </div>
-              )}
-            </div>
+  <button
+    className="w-full text-left flex items-center justify-between px-4 py-3 hover:bg-[#2a2940]"
+    onClick={toggleSoftware}
+    aria-expanded={softwareOpen}
+  >
+    <span className="text-sm font-medium">Software</span>
+    <FiChevronDown className={`transform transition-transform ${softwareOpen ? "rotate-180" : ""}`} />
+  </button>
+  {softwareOpen && (
+    <div className="bg-[#252438]">
+      <a
+        href="https://www.tinkercad.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full text-left block py-3 px-8 hover:bg-[#33324a] text-sm"
+      >
+        Tinkercad
+      </a>
+    </div>
+  )}
+</div>
           </nav>
         </div>
       )}
